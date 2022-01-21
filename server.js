@@ -37,8 +37,8 @@ const init = function () {
                     console.log(viewRoles[0]);
                     init();
                 })
-            } else if (firstPrompt === 'View all Employees') {
-                db.promise().query(`SELECT * FROM employee`).then(viewEmps => {
+            } else if (firstPrompt === 'View all employees') {
+                db.promise().query('SELECT * FROM `employee`').then(viewEmps => {
                     console.log(viewEmps[0]);
                     init();
                 })
@@ -148,22 +148,23 @@ function addRole() {
                         message: `What is the employee's role?`,
                         choices: res//some sort of function with a query that gets the roles from the jobrole table (`SELECT title FROM jobrole`)?
                     },
-                    {
-                        type: 'list',
-                        name: 'manager',
-                        message: `Who is the employee's manager?`,
-                        choices: [1, 2, 3] //Show list of employees for them to chose from and return id?
-                    }
+                    // {
+                    //     type: 'list',
+                    //     name: 'manager',
+                    //     message: `Who is the employee's manager?`,
+                    //     choices: [getManager()] //Show list of employees for them to chose from and return id?
+                    // }
 
-                ]).then(({ first, last, role, manager }) => {
+                ]).then(({ first, last, role }) => {
                     db.query(`SELECT id FROM jobrole WHERE name = ?`, role, (err, res) => {
                         if (err) { throw err } else {
-                            db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`, [first, last, res[0].id, manager], (err, res) => {
-                                if (err) { throw err } else {
-                                    console.log(`Employee: ${first} ${last} added!`);
-                                    init();
-                                }
-                            })
+                            getManager(first, last, res[0].id)
+                            // db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`, [first, last, res[0].id, manager], (err, res) => {
+                            //     if (err) { throw err } else {
+                            //         console.log(`Employee: ${first} ${last} added!`);
+                            //         init();
+                            //     }
+                            // })
                         }
                     })
                     //db.promise().query(`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES `)
@@ -173,8 +174,37 @@ function addRole() {
 
     };
 
+  function  getManager(first, last, role) {
+    db.query(`SELECT last_name FROM employee`, (err, res) => {
+        if(err) {throw err} else {
+            inquirer.prompt({
+                type: 'list',
+                name: 'manager',
+                message: `Who is the employee's manager?`,
+                choices: res //Show list of employees for them to chose from and return id?
+            })
+        }
+
+    }).then((first, last, role, { manager }) => {
+        db.query(`SELECT id FROM employee WHERE last_name = ?`, manager, (err, res) => {
+            if(err){throw err} else {
+                db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`, [first, last, role, res[0].id], (err, res) => {
+                    if (err) { throw err } else {
+                        console.log(`Employee: ${first} ${last} added!`);
+                        init();
+                    }
+                })
+            }
+        })
+    })
+    }
+
 
 function updateEmployee() {
+    //display list of employees for user to select from
+    //user selects employee and it grabs id from there
+    //user selects a new role for that employee
+    //db.query(`UPDATE employee SET role_id = ? WHERE id = ?`, )
     //update an employee 
 };
 
