@@ -30,12 +30,12 @@ When the user runs the file, they are prompted with a list of options on how the
 
 Here is a screenshot of what the initial prompts look like:
 
-![screenshot-of-browser](images/html.jpg)
+![screenshot-of-browser](images/prompts.jpg)
 
 
 Here is a screenshot of what a table will look like once it is populated: 
 
-![screenshot-of-terminal](images/node.jpg)
+![screenshot-of-terminal](images/table.jpg)
 
 ## License 
 
