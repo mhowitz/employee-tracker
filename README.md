@@ -30,12 +30,12 @@ When the user runs the file, they are prompted with a list of options on how the
 
 Here is a screenshot of what the initial prompts look like:
 
-![screenshot-of-browser](images/html.jpg)
+![screenshot-of-browser](images/prompts.jpg)
 
 
 Here is a screenshot of what a table will look like once it is populated: 
 
-![screenshot-of-terminal](images/node.jpg)
+![screenshot-of-terminal](images/tables.jpg)
 
 ## License 
 
@@ -52,7 +52,8 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Contributing
-
+Eric Sayer T.A.
+Karina T.A.
 
 ## Questions
 
