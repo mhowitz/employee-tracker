@@ -35,7 +35,7 @@ Here is a screenshot of what the initial prompts look like:
 
 Here is a screenshot of what a table will look like once it is populated: 
 
-![screenshot-of-terminal](images/table.jpg)
+![screenshot-of-terminal](images/tables.jpg)
 
 ## License 
 
