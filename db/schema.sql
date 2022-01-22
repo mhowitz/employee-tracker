@@ -4,12 +4,12 @@ DROP TABLE IF EXISTS department;
 
 CREATE TABLE department (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(30)
+    dept_name VARCHAR(30)
 );
 
 CREATE TABLE jobrole (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(30) NOT NULL,
+    title VARCHAR(30) NOT NULL,
     salary DECIMAL,
     department_id INTEGER,
     FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE SET NULL
