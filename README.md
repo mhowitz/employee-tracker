@@ -5,7 +5,7 @@
 
 Link to Repo: [GITHUB-REPO]https://github.com/mhowitz/employee-tracker
 
-Link to Walkthrough Video: [VIDEO]https://youtu.be/BLboeTLRoxg
+Link to Walkthrough Video: [VIDEO]https://youtu.be/DLflfRBWhwg
 
 ## Description
 
@@ -35,7 +35,7 @@ Here is a screenshot of what the initial prompts look like:
 
 Here is a screenshot of what a table will look like once it is populated: 
 
-![screenshot-of-terminal](images/tables.jpg)
+![screenshot-of-terminal](images/tables1.jpg)
 
 ## License 
 
