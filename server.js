@@ -21,7 +21,7 @@ const init = function () {
         type: 'list',
         name: 'firstPrompt',
         messsage: 'What would you like to do?',
-        choices: ['View all departments', 'View all Roles', 'View all employees', 'Add a department', 'Add a role', 'Add an employee', 'Update an employee role']
+        choices: ['View all departments', 'View all Roles', 'View all employees', 'Add a department', 'Add a role', 'Add an employee', 'Update an employee role', 'Exit']
     })
         //if statements that do things based on what the user choses
         .then(({ firstPrompt }) => {
@@ -49,8 +49,8 @@ const init = function () {
             } else if (firstPrompt === 'Update an employee role') {
                 updateEmployee();
             } else {
-                console.log('choose a valid option');
-
+                console.log(`To exit press 'Ctrl' + 'C'`);
+                
             }
 
         })
